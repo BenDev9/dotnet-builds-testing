@@ -1,4 +1,4 @@
-﻿name: Test
+name: Test
 
 on: workflow_dispatch
 
@@ -7,5 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Send greeting
-      run: echo "Hello World!"
+    - name: Set up dotnet environment
+      uses: xt0rted/setup-dotnet@v1.4.0
+      with:
+        dotnet-version: 6.0.0
+        
+    - name: Attempt build
+      run: dotnet build
