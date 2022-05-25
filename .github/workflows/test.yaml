@@ -9,6 +9,9 @@ jobs:
     steps:
     - name: Set up dotnet environment
       uses: actions/setup-dotnet@v2.1.0
+      
+    - name: list files
+      run: ls
         
     - name: Attempt build
       run: dotnet build ClassChartsApi.sln
